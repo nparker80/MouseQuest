@@ -1,0 +1,136 @@
+body {
+    background-color: rgb(43, 41, 41);
+}
+
+.signUp_Header {
+    
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    margin-top: 30px;
+    margin-bottom: 45px;
+
+    background-color: rgb(43, 41, 41);
+
+}
+
+.signUp_Div {
+    position: relative;
+    text-align: center;
+    background-color: rgb(43, 41, 41);
+    
+}
+
+.signUp_MQ {
+    background-color: transparent;
+    color: antiquewhite;
+    font-family: comforter;
+    font-size: 65px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+#logo_Image {
+    width: 10;
+    height: auto;
+}
+
+.signUp_Options {
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    margin-top: 15px;
+    margin-bottom: 65px;
+
+    width: 300px;
+    height: 400px;
+
+    background-color: rgb(59, 52, 52);
+    border-radius: 5px;
+
+
+}
+
+.signUp_Display {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    margin-top: 15px;
+    
+}
+
+#username_Input {
+    margin-bottom: 30px;
+}
+
+#link_to_login {
+    color: rgb(192, 84, 84);
+    margin-top: 10px;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+#signUp_Button {
+    background-color: transparent;
+    border-radius: 5px;
+    margin-top: 30px;
+    border-color: rgb(43, 41, 41) ;
+    color: #d35400;
+}
+
+
+.awesome {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-style: italic;
+    -webkit-animation: colorchange 2s infinite alternate;
+    margin-bottom: 25px;
+}
+
+.textFeild {
+    margin: 10px;
+}
+
+@-webkit-keyframes colorchange {
+    0% {
+    color: blue;
+    }
+    10% {
+    color: #8e44ad;
+    }
+    20% {
+    color: #1abc9c;
+    }
+    30% {
+    color: #d35400;
+    }
+    40% {
+    color: blue;
+    }
+    50% {
+    color: #34495e;
+    }
+    60% {
+    color: blue;
+    }
+    70% {
+    color: #2980b9;
+    }
+    80% {
+    color: #f1c40f;
+    }
+    90% {
+    color: #2980b9;
+    }
+    100% {
+    color: pink;
+    }
+}
+
