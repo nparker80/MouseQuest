@@ -2,93 +2,53 @@ body {
     background-color: rgb(43, 41, 41);
 }
 
-.login_Header {
+.createPost_Header {
     
     display: flex; 
-    justify-content: center;
+    justify-content: left;
     align-items: center;
     margin: 0 auto;
     margin-top: 30px;
+    margin-left: 30px;
 
     background-color: rgb(43, 41, 41);
 
 }
 
-.login_Div {
+.createPost_Div {
     position: relative;
     text-align: center;
     background-color: rgb(43, 41, 41);
     
 }
 
-.login_MQ {
+.createPost_MQ {
     background-color: transparent;
     color: antiquewhite;
     font-family: comforter;
-    font-size: 65px;
+    font-size: 38px;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
 
-
-#logo_Image {
-    width: 10;
-    height: auto;
-}
-
-.login_Options {
+.all_createPost_Header {
     display: flex;
+    flex-direction: row;
+}
 
-    justify-content: center;
-    align-items: center;
+#displayUsername {
+    font-size: 30px;
     margin: 0 auto;
-    margin-top: 30px;
-    margin-bottom: 65px;
-
-    width: 300px;
-    height: 300px;
-
-    background-color: rgb(59, 52, 52);
-    border-radius: 5px;
-
-
+    margin-top: 40px;
+    margin-right: 30px;
 }
 
-.login_Display {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin: 0 auto;
-    
-}
-
-#username_Input {
-    margin-bottom: 30px;
-}
-
-#link_to_SignUp {
-    color: rgb(192, 84, 84);
-    margin-top: 30px;
-    text-decoration: underline;
-    cursor: pointer;
-}
-
-#login_Button {
-    background-color: transparent;
-    border-radius: 5px;
-    margin-top: 30px;
-    border-color: rgb(43, 41, 41) ;
-    color: #d35400;
-}
-
-
-.awesome {
+.awesome_createPost {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-style: italic;
-    -webkit-animation: colorchange 2s infinite alternate;
+    -webkit-animation: colorchange 20s infinite alternate;
 }
 
 @-webkit-keyframes colorchange {
@@ -108,22 +68,23 @@ body {
     color: blue;
     }
     50% {
-    color: #34495e;
+    color: #1e9e53;
     }
     60% {
-    color: blue;
+    color: rgb(255, 0, 170);
     }
     70% {
-    color: #2980b9;
+    color: #ad0d0d;
     }
     80% {
     color: #f1c40f;
     }
     90% {
-    color: #2980b9;
+    color: #ce9e1a;
     }
     100% {
-    color: pink;
+    color: rgb(16, 168, 148);
     }
-  }
+}
+
 
