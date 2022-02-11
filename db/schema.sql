@@ -1,0 +1,2 @@
+DROP DATABASE IF EXISTS mouseQuest;
+CREATE DATABASE mouseQuest;
