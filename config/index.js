@@ -18,6 +18,10 @@ if (process.env.JAWSDB_URL) {
 	);
 	};
 
-
+module.exports = {
+	secret: "bezkoder-secret-key",
+	user: "mousequest30@gmail.com", 
+	pass: "mousequest1234", 
+};
 
 module.exports = sequelize;
