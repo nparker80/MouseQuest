@@ -11,11 +11,16 @@
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
     <!-- style sheet link -->
-    <link rel="stylesheet" href="../style/createPostPage.css">
+    <link rel="stylesheet" href="../../style/createPostPage.css">
+
+    <!-- link to character card .css -->
+    <link rel="stylesheet" href="../../style/characterCard.css"
 
     <!-- google fonts links  -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
+
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
     <link href="https://fonts.googleapis.com/css2?family=Comforter&display=swap" rel="stylesheet">
 
 
@@ -38,24 +43,25 @@
         </header>
 
         <section class="display_User">
-            <h1 class='awesome_createPost' id='displayUsername'>Welcome, </h1>
+
+            <!--this needs to be whatever and wherever the usernbame is being stored in the users database-->
+            <h1 class='awesome_createPost'>Welcome, {{username}} </h1>
         </section>
 
     </section>
-    <!-- header with logo -->
-<section class = 'place'>
+
+
+    {{{body}}}
 
 
 
 
 
+    {{#each js}}
 
-</section>
+        <script src = '../../public/js/createPost.js'
 
-
-
-
-
+    {{/each}}
 
 </body>
 
