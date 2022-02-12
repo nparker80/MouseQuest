@@ -31,11 +31,11 @@ User.init(
         },
 
         status: {
-            type: DataTypes.STRING, 
+            type: DataTypes.STRING,
             enum: ['Pending', 'Active'],
             default: 'Pending'
-          },
-          confirmationCode: { 
+        },
+        confirmationCode: {
             type: DataTypes.STRING,
             unique: true },
     },

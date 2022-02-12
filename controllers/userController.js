@@ -1,7 +1,4 @@
 const { User } = require('../models/User');
-const jwt = require("jsonwebtoken");
-const bcrypt = require("bcryptjs");
-
 
 module.exports = {
 	createUser: async (req, res) => {
@@ -37,9 +34,9 @@ module.exports = {
 
 			if (User.status != "Active") {
         return res.status(401).send({
-          message: "Pending Account. Please Verify Your Email!",
+        message: "Pending Account. Please Verify Your Email!",
         });
-      }
+    }
 			const userFound = userData.get({ plain: true });
 
 			console.log(userFound);
@@ -62,8 +59,6 @@ module.exports = {
 	},
 	signupHandler: async (req, res) => {
 		const { email, username, password } = req.body;
-		const confirmationCode = token,
-		const token = jwt.sign({email: req.body.email}, config.secret)
 		try {
 			const createdUser = await User.create({
 				email,
@@ -75,19 +70,19 @@ module.exports = {
 			user.save((err) => {
 				if (err) {
 					res.status(500).send({ message: err });
-							 return;
+							return;
 						}
-					 res.send({
-							 message:
-								 "User was registered successfully! Please check your email",
+					res.send({
+							message:
+								"User was registered successfully! Please check your email",
 						});
-	 
+
 					nodemailer.sendConfirmationEmail(
-						 User.username,
-						 User.email,
-						 User.confirmationCode
+						User.username,
+						User.email,
+						User.confirmationCode
 			);
-	 });
+	});
 
 			const user = createdUser.get({ plain: true });
 			req.session.save(() => {
@@ -108,7 +103,7 @@ module.exports = {
 				if (!user) {
 					return res.status(404).send({ message: "User Not found." });
 				}
-	
+
 				user.status = "Active";
 				user.save((err) => {
 					if (err) {
