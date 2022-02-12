@@ -17,4 +17,4 @@ let userInputHelmet = document.getElementById('userInputWeapon');
 
 console.log(userInputWeapon);
 
-module.exports = router;
+module.exports = routerdwa
