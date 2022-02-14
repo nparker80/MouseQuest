@@ -28,7 +28,16 @@ User.init(
             validate: {
                 len: [6]
             }
-        }
+        },
+
+        status: {
+            type: DataTypes.STRING,
+            enum: ['Pending', 'Active'],
+            default: 'Pending'
+        },
+        confirmationCode: {
+            type: DataTypes.STRING,
+            unique: true },
     },
     {
         sequelize,

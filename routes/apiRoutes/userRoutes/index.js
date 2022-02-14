@@ -4,6 +4,7 @@ const {
     login,
     signupHandler,
     logout,
+    verifyUser,
 } = require('../../../controllers/userController');
 
 router.route('/')
@@ -12,5 +13,7 @@ router.route('/')
 router.post('/signup', signupHandler);
 router.post('/login', login);
 router.post('/logout', logout);
+router.post('/verify', verifyUser);
+
 
 module.exports = router;
