@@ -1,5 +1,4 @@
 const { User } = require('../models/User');
-
 module.exports = {
 	createUser: async (req, res) => {
 		const { username, email, password } = req.body;
@@ -31,12 +30,6 @@ module.exports = {
 					email: req.body.email
 				}
 			});
-
-			if (User.status != "Active") {
-        return res.status(401).send({
-        message: "Pending Account. Please Verify Your Email!",
-        });
-    }
 			const userFound = userData.get({ plain: true });
 
 			console.log(userFound);
@@ -64,26 +57,7 @@ module.exports = {
 				email,
 				username,
 				password,
-				confirmationCode,
 			});
-
-			user.save((err) => {
-				if (err) {
-					res.status(500).send({ message: err });
-							return;
-						}
-					res.send({
-							message:
-								"User was registered successfully! Please check your email",
-						});
-
-					nodemailer.sendConfirmationEmail(
-						User.username,
-						User.email,
-						User.confirmationCode
-			);
-	});
-
 			const user = createdUser.get({ plain: true });
 			req.session.save(() => {
 				req.session.loggedIn = true;
@@ -94,27 +68,6 @@ module.exports = {
 			res.json(e);
 		}
 	},
-
-	verifyUser: (req, res) => {
-		User.findOne({
-			confirmationCode: req.params.confirmationCode,
-		})
-			.then((user) => {
-				if (!user) {
-					return res.status(404).send({ message: "User Not found." });
-				}
-
-				user.status = "Active";
-				user.save((err) => {
-					if (err) {
-						res.status(500).send({ message: err });
-						return;
-					}
-				});
-			})
-			.catch((e) => console.log("error", e));
-	},
-
 	loginView: (req, res) => {
 		if (req.session.loggedIn) {
 			return res.redirect('/globalPostPage');
