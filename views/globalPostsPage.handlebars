@@ -15,9 +15,12 @@
         </section>
 
     </section>
-    <!-- header with logo -->
-    <article class="cssui-usercard">
-		<div class="cssui-usercard__body">
+    <ul class="card_list">
+      {{#each_card}}
+      <li>
+      <!-- header with logo -->
+      {{<article class="cssui-usercard">
+		  <div class="cssui-usercard__body">
 			<header class="cssui-usercard__header">
 				<img src="https://stas-melnikov.ru/cliparts/stas.jpg" class="cssui-usercard__avatar" alt="Avatar">
 				<div class="cssui-usercard__header-info">
@@ -28,7 +31,7 @@
 			<div class="cssui-usercard__content">
 				<div class="cssui-slider">
 
-					<!-- the control elements of slider -->
+					
 
 					<input id="slide1" type="radio" class="cssui-slider__switch cssui-usercard__switch" name="slider-controls" checked autofocus>
 					<label for="slide1" class="cssui-slider__control cssui-usercard__control"></label>
@@ -38,7 +41,7 @@
 
 					<div class="cssui-slider__slides">
 
-						<!-- first slide -->
+						
 
 						<div class="cssui-slider__slide">
 							<h4 class="cssui-usercard__title">Build Choice</h4>
@@ -74,23 +77,17 @@
 							</div>
 						</div>
 
-						<!-- second slide -->
+						
 
 						<div class="cssui-slider__slide">
 							<h4 class="cssui-usercard__title">About Build</h4>
 							<div class="cssui-usercard__stats">
 								<p>test test test test test test test test test test test test test</p>
 							</div>
-						</div>
-
-
-
-
-
+						</div>}}
+      </li>
+      {{/each}}
+    </ul>
 
 </body>
-
-
-
-
 </html>
