@@ -1,20 +1,20 @@
-const router = require('express').Router();
+$(document).ready(function() {
+	const helmetFeild= $('#user_Helmet');
+	const armorField = $('#user_Armor');
+	const weaponsField = $('#user_Weapons');
+    const capeField = $('#user_Cape');
+    const aboutField = $('#user_About');
+	const postBtn = $('#post_Button');
+	postBtn.on('click', async function(event) {
+		event.preventDefault();
+		await $.post('/api/users/signup', {
+			helmet: helmetFeild.val(),
+			armor: armorField.val(),
+            weapon: weaponsField.val(),
+            cape: capeField.val(),
+            about: aboutField.val(),
+		});
 
-
-let userInputHelmet = document.getElementById('userInputHelmet');
-
-console.log(userInputHelmet);
-
-let userInputHelmet = document.getElementById('userInputArmor');
-
-console.log(userInputArmor);
-
-let userInputHelmet = document.getElementById('userInputCape');
-
-console.log(userInputCape);
-
-let userInputHelmet = document.getElementById('userInputWeapon');
-
-console.log(userInputWeapon);
-
-module.exports = routerdwa
+		window.location.href = '/login';
+	});
+});
