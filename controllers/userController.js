@@ -20,7 +20,7 @@ module.exports = {
 	},
 //	getting users
 	renderHomePage: async (req, res) => {
-		res.render('homepage');
+		res.render('login');
 	},
 	login: async (req, res) => {
 
