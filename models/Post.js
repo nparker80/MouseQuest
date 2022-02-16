@@ -5,22 +5,38 @@ class Post extends Model {};
 
 Post.init(
     {
-        id: {
-            type: DataTypes.UUID,
-            defaultValue: UUIDV4,
-            primaryKey: true,
-        },
-        // Placeholder
-        tasks: {
+        username: {
             type: DataTypes.STRING,
-            allowNull: false,
-        },
-        userId: {
-            type: DataTypes.UUID,
             references: {
                 model: 'user',
-                key: 'id',
+                key: 'username'
             }
+        },
+
+        helmet: {
+            type: DataTypes.STRING,
+            maxLength: 15,
+            allowNull: false,
+        },
+        armor: {
+            type: DataTypes.STRING,
+            maxLength: 15,
+            allowNull: false,
+        },
+        weapon: {
+            type: DataTypes.STRING,
+            maxLength: 15,
+            allowNull: false,
+        },
+        cape: {
+            type: DataTypes.STRING,
+            maxLength: 15,
+            allowNull: false,
+        },
+        about: {
+            type: DataTypes.STRING,
+            maxLength: 40,
+            allowNull: false,
         }
     },
     {
