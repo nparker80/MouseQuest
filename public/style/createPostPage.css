@@ -1,3 +1,12 @@
+.createPost_Main {
+    display: flex;
+    align-content: center;
+    margin: 0 auto;
+    border-radius: 5px;
+    background-color: yellow;
+
+}
+
 body {
     background-color: rgb(43, 41, 41);
 }
@@ -49,6 +58,8 @@ body {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-style: italic;
     -webkit-animation: colorchange 20s infinite alternate;
+    margin-right: 35px;
+    margin-top: 35px;
 }
 
 @-webkit-keyframes colorchange {
