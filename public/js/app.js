@@ -9,7 +9,7 @@ $(document).ready(function() {
 			email: emailField.val().trim(),
 			password: passwordField.val().trim(),
 		});
-		window.location.href = '../views/globalPostsPage';
+		window.location.href = '/';
 	});
 	logoutBtn.on('click', async function() {
 		await $.post('/api/users/logout');

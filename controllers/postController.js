@@ -8,7 +8,12 @@ module.exports = {
         try {
             const userPostsData = await Post.findAll({
                 where: {
-                    userId: req.session.user.id,
+                    userid,
+                    helmet,
+                    armor,
+                    weapon,
+                    cape,
+                    about,
                 }
             })
             res.render('Posts', {
@@ -20,11 +25,15 @@ module.exports = {
         }
     },
     createPost: async (req, res) => {
-        const { task } = req.body;
+        const { userid, helmet, armor, weapon, cape, about } = req.body;
         try {
             const newPost = await Post.create({
-                task,
-                userId: req.session.user.id,
+                userid,
+                helmet,
+                armor,
+                weapon,
+                cape,
+                about,
             });
             res.json({ newPost });
         } catch (e) {

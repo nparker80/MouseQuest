@@ -1,22 +1,8 @@
-{{#each}}
-    <section class = 'all_createPost_Header'>
-        <header class = "createPost_Header">
-        
-            <div class = "createPost_Div">
-                <img id = 'logo_Image' src="../images/dungeonGif_sm.gif">
-                <h1 class = ' createPost_MQ'>MouseQuest</h1>
-            </div>
-                
-        
-        </header>
 
-        <section class = "display_User">
-            <h1 class = 'awesome_createPost' id = displayUsername>Welcome, </h1>
-        </section>
-
-    </section>
+{{#each_card}}
+    <li>
     <!-- header with logo -->
-    <article class="cssui-usercard">
+    {{<article class="cssui-usercard">
 		<div class="cssui-usercard__body">
 			<header class="cssui-usercard__header">
 				<img src="https://stas-melnikov.ru/cliparts/stas.jpg" class="cssui-usercard__avatar" alt="Avatar">
@@ -81,16 +67,6 @@
 							<div class="cssui-usercard__stats">
 								<p>test test test test test test test test test test test test test</p>
 							</div>
-						</div>
-
-
-
-
-
-
-</body>
-
-
-
-
-</html>
+						</div>}}
+    </li>
+{{/each}}

@@ -5,14 +5,18 @@ class Post extends Model {};
 
 Post.init(
     {
-        username: {
+        id: {
+            type: DataTypes.UUID,
+            defaultValue: UUIDV4,
+            primaryKey: true,
+        },
+        userid: {
             type: DataTypes.STRING,
             references: {
                 model: 'user',
                 key: 'username'
             }
         },
-
         helmet: {
             type: DataTypes.STRING,
             maxLength: 15,

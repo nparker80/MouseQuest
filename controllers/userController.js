@@ -20,7 +20,7 @@ module.exports = {
 	},
 //	getting users
 	renderHomePage: async (req, res) => {
-		res.render('login');
+		res.render('globalPostsPage');
 	},
 	login: async (req, res) => {
 
@@ -76,6 +76,11 @@ module.exports = {
 		}
 		res.render('login');
 	},
+	globalPostView: (req, res) => {
+		if (req.session.loggedIn) {
+			return res.redirect('/globalPostPage');
+		}
+	},
 	signupView: (req, res) => {
 		if (req.session.loggedIn) {
 			return res.redirect('/globalPostPage');
@@ -88,3 +93,4 @@ module.exports = {
 		});
 	},
 }
+
