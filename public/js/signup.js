@@ -1,3 +1,4 @@
+// test
 $(document).ready(function() {
 	const emailField = $('#email_Input');
 	const usernameField = $('#create_username_Input');
@@ -11,6 +12,6 @@ $(document).ready(function() {
 			password: passwordField.val(),
 		});
 
-		window.location.href = '../views/globalPostsPage';
+		window.location.href = '/login';
 	});
 });
