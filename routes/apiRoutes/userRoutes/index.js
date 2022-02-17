@@ -1,4 +1,3 @@
-// test
 const router = require('express').Router();
 const {
     createUser,
@@ -10,7 +9,7 @@ const {
 
 router.route('/')
     .post(createUser);
-router.route('/globalPostPage', globalPostView);
+router.route('/globalPostsPage', globalPostView);
 router.post('/signup', signupHandler);
 router.post('/login', login);
 router.post('/logout', logout);
