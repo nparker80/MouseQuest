@@ -34,10 +34,10 @@ module.exports = {
         }
     },
     createPost: async (req, res) => {
-        const { userid, helmet, armor, weapon, cape, about } = req.body;
+        const { helmet, armor, weapon, cape, about } = req.body;
         try {
             const newPost = await Post.create({
-                userid,
+                userid: req.session.user.id, 
                 helmet,
                 armor,
                 weapon,

@@ -12,14 +12,14 @@ Post.init(
             primaryKey: true,
         },
         userid: {
-            type: DataTypes.STRING,
+            type: DataTypes.UUID,
             references: {
                 model: 'user',
-                key: 'username'
+                key: 'id'
             }
         },
         helmet: {
-            type: DataTypes.STRING,
+            type: DataTypes.STRING, 
             maxLength: 15,
             allowNull: false,
         },
