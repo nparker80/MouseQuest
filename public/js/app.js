@@ -1,5 +1,6 @@
+// test
 $(document).ready(function() {
-	const {emailField} = $('#emailField');
+	const emailField = $('#emailField');
 	const passwordField = $('#password_Input');
 	const signinBtn = $('#login_Button');
 	const logoutBtn = $('#logout');
@@ -9,7 +10,7 @@ $(document).ready(function() {
 			email: emailField.val().trim(),
 			password: passwordField.val().trim(),
 		});
-		window.location.href = '../views/globalPostsPage';
+		window.location.href = '/';
 	});
 	logoutBtn.on('click', async function() {
 		await $.post('/api/users/logout');

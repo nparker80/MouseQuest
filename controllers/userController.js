@@ -1,3 +1,4 @@
+// test
 const {
 	User
 } = require('../models/');
@@ -20,7 +21,7 @@ module.exports = {
 	},
 //	getting users
 	renderHomePage: async (req, res) => {
-		res.render('login');
+		res.render('globalPostsPage');
 	},
 	login: async (req, res) => {
 
@@ -75,6 +76,11 @@ module.exports = {
 			return res.redirect('/globalPostPage');
 		}
 		res.render('login');
+	},
+	globalPostView: (req, res) => {
+		if (req.session.loggedIn) {
+			return res.redirect('/globalPostPage');
+		}
 	},
 	signupView: (req, res) => {
 		if (req.session.loggedIn) {
