@@ -1,36 +1,18 @@
-// test
 const {
 	User
 } = require('../models/');
 module.exports = {
-	createUser: async (req, res) => {
-		const { username, email, password } = req.body;
-		if (!username || !email || !password ) {
-			return res.status(400).json({ error: 'You must provide a username, email, and password'});
-		}
-		try {
-			const user = await User.create({
-				username,
-				email,
-				password,
-			});
-			res.json(user);
-		} catch (e) {
-			res.json(e);
-		}
-	},
 //	getting users
 	renderHomePage: async (req, res) => {
 		res.render('globalPostsPage');
 	},
 	login: async (req, res) => {
-
 		console.log(req.body);
 		try {
 			//	first find the user with the given email address
 			const userData = await User.findOne({
 				where: {
-					email: req.body.email
+					username: req.body.username
 				}
 			});
 			const userFound = userData.get({ plain: true });
@@ -73,18 +55,18 @@ module.exports = {
 	},
 	loginView: (req, res) => {
 		if (req.session.loggedIn) {
-			return res.redirect('/globalPostPage');
+			return res.redirect('/api/posts/');
 		}
 		res.render('login');
 	},
 	globalPostView: (req, res) => {
 		if (req.session.loggedIn) {
-			return res.redirect('/globalPostPage');
+			return res.redirect('/api/posts/');
 		}
 	},
 	signupView: (req, res) => {
 		if (req.session.loggedIn) {
-			return res.redirect('/globalPostPage');
+			return res.redirect('/api/posts/');
 		}
 		res.render('signUp');
 	},
@@ -94,4 +76,3 @@ module.exports = {
 		});
 	},
 }
-
