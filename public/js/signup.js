@@ -1,3 +1,4 @@
+// test
 $(document).ready(function() {
 	const emailField = $('#email_Input');
 	const usernameField = $('#create_username_Input');

@@ -1,5 +1,6 @@
+// test
 $(document).ready(function() {
-	const {emailField} = $('#emailField');
+	const emailField = $('#emailField');
 	const passwordField = $('#password_Input');
 	const signinBtn = $('#login_Button');
 	const logoutBtn = $('#logout');

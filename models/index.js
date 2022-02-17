@@ -1,3 +1,4 @@
+// test
 const Post = require('./Post');
 const User = require('./User');
 
@@ -12,6 +13,7 @@ Post.belongsTo(User, {
 module.exports = {
     Post,
     User,
+<<<<<<< HEAD
 }
 
 
@@ -27,3 +29,6 @@ module.exports = {
 
 
 
+=======
+}
+>>>>>>> 4e578e7ca837052924b128c280b11133b11f893a
