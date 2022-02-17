@@ -1,6 +1,5 @@
 const router = require('express').Router();
 const {
-    createUser,
     login,
     signupHandler,
     logout,
@@ -8,8 +7,7 @@ const {
 } = require('../../../controllers/userController');
 
 router.route('/')
-    .post(createUser);
-router.route('/globalPostsPage', globalPostView);
+router.route('/globalPostPage', globalPostView);
 router.post('/signup', signupHandler);
 router.post('/login', login);
 router.post('/logout', logout);

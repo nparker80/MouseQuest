@@ -7,7 +7,8 @@ $(document).ready(function() {
 	const postBtn = $('#post_Button');
 	postBtn.on('click', async function(event) {
 		event.preventDefault();
-		await $.post('/api/users/signup', {
+		alert('HEY!');
+		await $.post('/api/posts/', {
 			helmet: helmetField.val(),
 			armor: armorField.val(),
             weapon: weaponsField.val(),

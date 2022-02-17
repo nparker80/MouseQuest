@@ -70,6 +70,12 @@ module.exports = {
 		}
 		res.render('signUp');
 	},
+	createView: (req, res) => {
+		if (!req.session.loggedIn) {
+			return res.render('login');
+		}
+		res.render('createPost');
+	},
 	logout: (req, res) => {
 		req.session.destroy(() => {
 			res.send({ status: true });
