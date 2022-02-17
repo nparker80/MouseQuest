@@ -15,15 +15,14 @@ module.exports = {
             res.json(e);
         }
     },
-    getPostsByUsername: async (req, res) => {
+    getPostsByUserId: async (req, res) => {
         if (!req.session.loggedIn) {
             return res.redirect('/login');
         }
-        const { username } = req.body;
         try {
             const userPostsData = await Post.findAll({
                 where: { 
-                    username
+                    userid: req.session.user.id,
                 }
             });
             res.render('Posts', {

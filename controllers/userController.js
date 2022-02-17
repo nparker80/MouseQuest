@@ -61,12 +61,12 @@ module.exports = {
 	},
 	globalPostView: (req, res) => {
 		if (req.session.loggedIn) {
-			return res.redirect('/globalPostPage');
+			return res.redirect('/api/posts/');
 		}
 	},
 	signupView: (req, res) => {
 		if (req.session.loggedIn) {
-			return res.redirect('/globalPostPage');
+			return res.redirect('/api/posts/');
 		}
 		res.render('signUp');
 	},
