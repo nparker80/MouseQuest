@@ -1,3 +1,4 @@
+// test
 const router = require('express').Router();
 const userPosts = require('./postRoutes')
 const userRoutes = require('./userRoutes');
