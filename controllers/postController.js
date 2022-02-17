@@ -9,14 +9,9 @@ module.exports = {
         try {
             const userPostsData = await Post.findAll({
                 where: {
-                    userid,
-                    helmet,
-                    armor,
-                    weapon,
-                    cape,
-                    about,
+                    userid: req.session.user.id,
                 }
-            })
+            });
             res.render('Posts', {
                 userPosts: userPostsData.map(userPost => userPost.get({ plain: true })),
                 user: req.session.user,
