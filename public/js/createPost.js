@@ -1,4 +1,7 @@
+<<<<<<< HEAD
+=======
 // test
+>>>>>>> 4e578e7ca837052924b128c280b11133b11f893a
 $(document).ready(function() {
 	const helmetFeild= $('#user_Helmet');
 	const armorField = $('#user_Armor');
@@ -18,4 +21,8 @@ $(document).ready(function() {
 
 		window.location.href = '/login';
 	});
+<<<<<<< HEAD
 });
+=======
+});
+>>>>>>> 4e578e7ca837052924b128c280b11133b11f893a
