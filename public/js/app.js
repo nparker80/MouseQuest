@@ -1,12 +1,12 @@
 $(document).ready(function() {
-	const {emailField} = $('#emailField');
+	const usernameField = $('#username_Input');
 	const passwordField = $('#password_Input');
 	const signinBtn = $('#login_Button');
 	const logoutBtn = $('#logout');
 	signinBtn.on('click', async function(event) {
 		event.preventDefault();
 		await $.post('/api/users/login', {
-			email: emailField.val().trim(),
+			username: usernameField.val().trim(),
 			password: passwordField.val().trim(),
 		});
 		window.location.href = '/';
