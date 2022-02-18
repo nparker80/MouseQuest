@@ -1,12 +1,19 @@
 
 <div class="card_Main">
-	{{#each userPosts as |post|}}
-		<div>{{post.id}}</div>
-		<div>{{post.helmet}}</div>
-		<div>{{post.armor}}</div>
-		<div>{{post.weapon}}</div>
-		<div>{{post.cape}}</div>
-		<div>{{post.about}}</div>
-	{{/each}}
+
+		{{#each userPosts as |post|}}
+			
+			<section class = "card_Section">
+				<div>User Id: {{post.id}}</div>
+				<div>Helmet: {{post.helmet}}</div>
+				<div>Armor: {{post.armor}}</div>
+				<div>Weapon: {{post.weapon}}</div>
+				<div>Cape: {{post.cape}}</div>
+				<div>About: {{post.about}}</div>
+			</section>
+		
+		{{/each}}
+
+		
 </div>
 
