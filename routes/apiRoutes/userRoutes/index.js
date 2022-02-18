@@ -6,8 +6,7 @@ const {
     globalPostView,
 } = require('../../../controllers/userController');
 
-router.route('/')
-router.route('/globalPostPage', globalPostView);
+router.get('/globalPostPage', globalPostView);
 router.post('/signup', signupHandler);
 router.post('/login', login);
 router.post('/logout', logout);
