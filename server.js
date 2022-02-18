@@ -16,8 +16,7 @@ const sessionSettings = {
 	resave: false,
 	saveUninitialized: false,
 };
-// Tells node we're using handlebars as our templating engine
-// configured handlebars as the view engine
+
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
 // somePath/public
