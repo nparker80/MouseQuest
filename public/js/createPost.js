@@ -7,7 +7,7 @@ $(document).ready(function() {
 	const postBtn = $('#post_Button');
 	postBtn.on('click', async function(event) {
 		event.preventDefault();
-		alert('HEY!');
+		alert('HEY, you made post! (pat yourself on the back)');
 		await $.post('/api/posts/', {
 			helmet: helmetField.val(),
 			armor: armorField.val(),
