@@ -10,7 +10,7 @@ $(document).ready(function() {
 			username: usernameField.val().trim(),
 			password: passwordField.val().trim(),
 		});
-		window.location.href = '/';
+		window.location.href = '/createPost';
 	});
 	logoutBtn.on('click', async function() {
 		await $.post('/api/users/logout');

@@ -1,13 +1,18 @@
+const bcrypt = require('bcryptjs');
+
+
 const {
 	User
 } = require('../models/');
 module.exports = {
 //	getting users
 	renderHomePage: async (req, res) => {
-		res.render('globalPostsPage');
+		res.render('globalPostsPage', {
+			loggedIn: false,
+		});
 	},
 	login: async (req, res) => {
-		console.log(req.body);
+		const { password } = req.body;
 		try {
 			//	first find the user with the given email address
 			const userData = await User.findOne({
@@ -15,15 +20,12 @@ module.exports = {
 					username: req.body.username
 				}
 			});
+			const isMatchingPassword = await bcrypt.compare(password, userData.password)
+			if (!isMatchingPassword) {
+			return res.status(401).json({ error: 'Invalid password'});
+			}
 			const userFound = userData.get({ plain: true });
-
-			console.log(userFound);
-			//	check if the password from the form is the same password as the user found
-			//	with the given email
-			//	if that is true, save the user found in req.session.user
-			console.log(userFound.password, 72);
-			console.log(req.body.password, 73);
-			if (userFound.password === req.body.password) {
+			if (userFound) {
 				req.session.save(() => {
 					req.session.loggedIn = true;
 					req.session.user = userFound;
@@ -47,7 +49,7 @@ module.exports = {
 			req.session.save(() => {
 				req.session.loggedIn = true;
 				req.session.user = user;
-				res.redirect('/globalPostPage');
+				res.redirect('/api/users/gpp');
 			});
 		} catch (e) {
 			res.json(e);
@@ -63,6 +65,7 @@ module.exports = {
 		if (req.session.loggedIn) {
 			return res.redirect('/api/posts/');
 		}
+		res.render('login');
 	},
 	signupView: (req, res) => {
 		if (req.session.loggedIn) {
@@ -74,7 +77,9 @@ module.exports = {
 		if (!req.session.loggedIn) {
 			return res.render('login');
 		}
-		res.render('createPost');
+		res.render('createPost',{
+			loggedIn: true,
+		});
 	},
 	logout: (req, res) => {
 		req.session.destroy(() => {

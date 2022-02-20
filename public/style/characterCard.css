@@ -8,7 +8,7 @@
 }
 
 .card_Section {
-    border-color: 1px solid lightgreen;
+    border-color: 3px solid lightgreen;
     background-color: gray;
     margin: 25px;
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
@@ -16,4 +16,9 @@
     border-radius: 5px;
     justify-content: center;
 
+}
+
+.upvotes_Box {
+    display: flex;
+    flex-direction: row;
 }
