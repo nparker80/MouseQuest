@@ -55,7 +55,7 @@ List of Contributors:
 1. Jesus Balandra 
 2. Giovanni Domino
 3. Najla Parker
-4. Zachary Swathfigure
+4. Zachary Swatfigure
 
 ## Questions
 
