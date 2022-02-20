@@ -1,3 +1,4 @@
+
 $(document).ready(function() {
 	const helmetField= $('#user_Helmet');
 	const armorField = $('#user_Armor');
@@ -7,8 +8,7 @@ $(document).ready(function() {
 	const postBtn = $('#post_Button');
 	postBtn.on('click', async function(event) {
 		event.preventDefault();
-		alert('HEY, you made post! (pat yourself on the back)');
-		await $.post('/api/posts/', {
+		await $.post('/api/posts', {
 			helmet: helmetField.val(),
 			armor: armorField.val(),
             weapon: weaponsField.val(),
@@ -17,5 +17,7 @@ $(document).ready(function() {
 		});
 
 		window.location.href = '/login';
+
 	})
+
 	});

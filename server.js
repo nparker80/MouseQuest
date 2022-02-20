@@ -1,4 +1,5 @@
 require('dotenv').config();
+const clc = require("cli-color");
 const path = require('path');
 const express = require('express');
 const exphbs = require('express-handlebars');
@@ -19,12 +20,11 @@ const sessionSettings = {
 
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
-// somePath/public
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(session(sessionSettings));
 app.use(routes);
 sequelize.sync({ force: false }).then(() => {
-	app.listen(PORT, () => console.log(`Server listening on port ${PORT}`));
+	app.listen(PORT, () => console.log(clc.blue(`Server listening on port ${PORT}`)));
 });

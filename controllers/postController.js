@@ -10,6 +10,8 @@ module.exports = {
             res.render('globalPostsPage', {
                 userPosts: userPostsData.map(userPost => userPost.get({ plain: true })),
                 user: req.session.user,
+                loggedIn: true,
+                mine: false,
             });
         } catch (e) {
             res.json(e);
@@ -25,9 +27,11 @@ module.exports = {
                     userid: req.session.user.id,
                 }
             });
-            res.render('Posts', {
+            res.render('globalPostsPage', {
                 userPosts: userPostsData.map(userPost => userPost.get({ plain: true })),
                 user: req.session.user,
+                loggedIn: true,
+                mine: true,
             });
         } catch (e) {
             res.json(e);
@@ -37,7 +41,8 @@ module.exports = {
         const { helmet, armor, weapon, cape, about } = req.body;
         try {
             const newPost = await Post.create({
-                userid: req.session.user.id, 
+                userid: req.session.user.id,
+                username: req.session.user.username,
                 helmet,
                 armor,
                 weapon,

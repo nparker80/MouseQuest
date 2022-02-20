@@ -18,6 +18,13 @@ Post.init(
                 key: 'id'
             }
         },
+        username: {
+            type: DataTypes.STRING,
+            references: {
+                model: 'user',
+                key: 'username'
+            }
+        },
         helmet: {
             type: DataTypes.STRING, 
             maxLength: 15,

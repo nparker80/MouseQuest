@@ -50,14 +50,23 @@
         <section class="Nav_Bar_Main">
 
             <section class="Nav_Bar_Section">
+                {{#if loggedIn}}
 
-                <a href="/login" class='NavBar_Links'>Login</a>
+                    <a href='/api/posts/' class='NavBar_Links' id = 'show_posts'>Posts</a>
 
-                <a href="/signup" class='NavBar_Links'>Sign Up</a>
+                    <a href="/createPost" class='NavBar_Links'>Create Post</a>
+
+                    <button class = "NavBar_Links" id = "logout">Logout</button>
 
 
-                <a href="/createPost" class='NavBar_Links'>Post</a>
+                {{else}}
 
+                    <a href="/signup" class='NavBar_Links'>Sign Up</a>
+
+                    <a href="/login" class='NavBar_Links'>Login</a>
+
+                    
+                {{/if}}
             </section>
 
         </section>
@@ -66,6 +75,7 @@
 
             <!--this needs to be whatever and wherever the username is being stored in the users database-->
             <h1 class='awesome_createPost'>Welcome! {{user.username}} </h1>
+            
         </section>
 
     </section>
